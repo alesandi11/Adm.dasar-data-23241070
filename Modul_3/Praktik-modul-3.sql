@@ -7,8 +7,8 @@
 USE pti_mart;
 
 --- Praktek 1
-SELECT 77;				-- Menampilkan angka literal 77 sebagai hasil query.
-SELECT 77 AS angka;		-- Menampilkan angka 77 dengan alias angka.
+SELECT 77;		-- Menampilkan angka literal 77 sebagai hasil query.
+SELECT 77 AS angka;	-- Menampilkan angka 77 dengan alias angka.
 
 --- Praktek 2
 -- Menampilkan angka 77, nilai boolean true, dan string 'PTI' dengan alias yang sesuai.
