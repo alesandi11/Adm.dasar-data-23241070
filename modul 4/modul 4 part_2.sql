@@ -184,26 +184,3 @@ SELECT nama_produk, SUM(harga * qty - (diskon_persen / 100) * harga * qty) AS to
 FROM tr_penjualan
 GROUP BY nama_produk
 ORDER BY total_penjualan DESC;
-
-
--- tugas mandiri
--- mengelompokkan data per produk, menghitung total penjualan dengan SUM(qty), 
--- dan menyaring yang terjual lebih dari 4 unit untuk analisis produk laku.
-SELECT nama_produk, SUM(qty) AS total_terjual
-FROM tr_penjualan_dqlab
-GROUP BY nama_produk
-HAVING SUM(qty) > 4;
-
---  mengelompokkan data produk dengan total penjualan tepat 9 unit untuk memenuhi kondisi pencarian tertentu.
-SELECT nama_produk, SUM(qty) AS total_terjual
-FROM tr_penjualan_dqlab
-GROUP BY nama_produk
-HAVING SUM(qty) = 9;
-
--- enghitung total penjualan per produk setelah diskon dan mengurutkannya dari yang tertinggi,
--- cocok untuk laporan keuangan dan analisis produk terlaris.
-SELECT nama_produk, 
-       SUM(harga * qty - (diskon_persen / 100) * (harga * qty)) AS total_penjualan
-FROM tr_penjualan_dqlab
-GROUP BY nama_produk
-ORDER BY total_penjualan DESC;
